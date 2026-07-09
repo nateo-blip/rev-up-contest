@@ -1,0 +1,53 @@
+-- REV UP Contest: Bonus Points Tracking
+-- Selfie Day (Wednesdays): +10 pts, Lizzy picks 1 winner org-wide
+-- Slack Engagement Bonus: +10 pts, most engaged region wins
+-- These are manually awarded - this table stores the entries
+
+-- Create table for manual bonus entries (Selfie Day + Slack Engagement)
+CREATE TABLE IF NOT EXISTS APP_SALES.APP_SALES_ETL.REVUP_BONUS_POINTS (
+    BONUS_ID NUMBER AUTOINCREMENT,
+    BONUS_TYPE VARCHAR(50) NOT NULL,  -- 'SELFIE_DAY' or 'SLACK_ENGAGEMENT'
+    AWARD_DATE DATE NOT NULL,
+    REP_LDAP VARCHAR(100),            -- NULL for regional bonuses (Slack Engagement)
+    REP_NAME VARCHAR(200),
+    REGION VARCHAR(50),               -- Required for Slack Engagement
+    POINTS NUMBER DEFAULT 10,
+    AWARDED_BY VARCHAR(100),          -- Who awarded (e.g., 'Lizzy' for Selfie Day)
+    NOTES VARCHAR(500),
+    CREATED_AT TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+-- View combining automated + manual bonus points
+CREATE OR REPLACE VIEW APP_SALES.APP_SALES_ETL.VW_REVUP_FULL_LEADERBOARD AS
+SELECT 
+    lb.REP_NAME,
+    lb.REP_LDAP,
+    lb.MANAGER,
+    lb.REGION,
+    lb.SIGN_POINTS,
+    lb.SIGN_COUNT,
+    lb.ACTIVATION_POINTS,
+    lb.ACTIVATION_COUNT,
+    lb.DOUBLE_BONUS_POINTS,
+    lb.DOUBLE_BONUS_COUNT,
+    lb.LOAN_POINTS,
+    lb.LOAN_COUNT,
+    COALESCE(selfie.SELFIE_POINTS, 0) AS SELFIE_DAY_POINTS,
+    COALESCE(slack.SLACK_POINTS, 0) AS SLACK_ENGAGEMENT_POINTS,
+    (lb.TOTAL_POINTS 
+     + COALESCE(selfie.SELFIE_POINTS, 0) 
+     + COALESCE(slack.SLACK_POINTS, 0)) AS GRAND_TOTAL_POINTS
+FROM APP_SALES.APP_SALES_ETL.VW_REVUP_LEADERBOARD lb
+LEFT JOIN (
+    SELECT REP_LDAP, SUM(POINTS) AS SELFIE_POINTS
+    FROM APP_SALES.APP_SALES_ETL.REVUP_BONUS_POINTS
+    WHERE BONUS_TYPE = 'SELFIE_DAY'
+    GROUP BY REP_LDAP
+) selfie ON lb.REP_LDAP = selfie.REP_LDAP
+LEFT JOIN (
+    SELECT REGION, SUM(POINTS) AS SLACK_POINTS
+    FROM APP_SALES.APP_SALES_ETL.REVUP_BONUS_POINTS
+    WHERE BONUS_TYPE = 'SLACK_ENGAGEMENT'
+    GROUP BY REGION
+) slack ON lb.REGION = slack.REGION
+ORDER BY GRAND_TOTAL_POINTS DESC;

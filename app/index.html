@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REV UP - Q3 Fast Start Contest</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh}
+.header{text-align:center;padding:30px 20px 20px;border-bottom:2px solid #333}
+.title{font-size:4rem;font-weight:900;letter-spacing:-2px}
+.title .rev{color:#e63946}.title .up{color:#fff}
+.subtitle{color:#aaa;font-size:0.9rem;letter-spacing:3px;margin-top:8px}
+.date-badge{display:inline-block;border:1px solid #ffd700;color:#ffd700;padding:6px 20px;border-radius:20px;margin-top:12px;font-size:0.85rem}
+.countdown{display:flex;justify-content:center;gap:15px;margin-top:15px}
+.countdown div{text-align:center}.countdown .num{font-size:1.8rem;font-weight:700;color:#ffd700}
+.countdown .label{font-size:0.7rem;color:#888;text-transform:uppercase}
+.tabs{display:flex;justify-content:center;gap:10px;padding:20px;border-bottom:1px solid #222}
+.tab{padding:10px 24px;border-radius:8px;cursor:pointer;font-weight:600;background:#1a1a1a;border:1px solid #333;transition:all 0.2s}
+.tab:hover{border-color:#e63946}.tab.active{background:#e63946;border-color:#e63946;color:#fff}
+.content{max-width:1200px;margin:0 auto;padding:30px 20px}
+.hidden{display:none}
+.region-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.region-card{background:#1a1a1a;border:2px solid #333;border-radius:16px;padding:24px;text-align:center;transition:transform 0.2s}
+.region-card:hover{transform:translateY(-4px)}
+.region-card.leader{border-color:#ffd700;box-shadow:0 0 20px rgba(255,215,0,0.2)}
+.region-card.leader::before{content:'👑';font-size:2rem;display:block;margin-bottom:8px}
+.region-name{font-size:1.5rem;font-weight:700;margin-bottom:5px}
+.region-pts{font-size:3rem;font-weight:900;color:#ffd700}
+.region-pts-label{font-size:0.8rem;color:#888;margin-bottom:15px}
+.breakdown{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:15px}
+.breakdown-item{background:#111;border-radius:8px;padding:10px}
+.breakdown-item .val{font-size:1.2rem;font-weight:700}
+.breakdown-item .lbl{font-size:0.7rem;color:#888}
+.filters{display:flex;gap:8px;margin-bottom:20px}
+.filter-btn{padding:8px 16px;border-radius:6px;cursor:pointer;background:#1a1a1a;border:1px solid #333;color:#fff;font-weight:500}
+.filter-btn.active{background:#e63946;border-color:#e63946}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:12px;border-bottom:2px solid #333;color:#888;font-size:0.8rem;text-transform:uppercase;cursor:pointer}
+th:hover{color:#ffd700}
+td{padding:12px;border-bottom:1px solid #1a1a1a}
+tr:hover td{background:#111}
+.rank{font-weight:700;color:#ffd700}
+.region-tag{padding:3px 8px;border-radius:4px;font-size:0.75rem;font-weight:600}
+.region-tag.East{background:#1a3a5c;color:#5ba3e6}
+.region-tag.West{background:#3a1a1a;color:#e65b5b}
+.region-tag.Central{background:#1a3a1a;color:#5be65b}
+.rules-section{margin-bottom:30px}
+.rules-section h3{color:#ffd700;margin-bottom:15px;font-size:1.2rem}
+.rule-card{background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:20px;margin-bottom:15px}
+.rule-card h4{margin-bottom:10px;color:#fff}
+.rule-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #222}
+.rule-row:last-child{border:none}
+.rule-pts{color:#ffd700;font-weight:700}
+.double-bonus{background:linear-gradient(135deg,#3a1a0a,#1a0a0a);border-color:#e63946}
+.double-bonus h4{color:#e63946}
+.prize-card{background:linear-gradient(135deg,#2a1a00,#0a0a0a);border:2px solid #ffd700;text-align:center;padding:30px}
+.prize-card h4{font-size:1.5rem;color:#ffd700}
+.footer{text-align:center;padding:30px;color:#555;font-size:0.8rem;border-top:1px solid #222;margin-top:40px}
+@media(max-width:768px){.region-cards{grid-template-columns:1fr}.title{font-size:2.5rem}}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="title"><span class="rev">REV</span> <span class="up">UP</span></div>
+<div class="subtitle">Q3 FAST START CONTEST · FIELD SALES · ALL REGIONS</div>
+<div class="date-badge">JULY 1 – AUGUST 1, 2026</div>
+<div class="countdown" id="countdown">
+<div><div class="num" id="days">0</div><div class="label">Days</div></div>
+<div><div class="num" id="hours">0</div><div class="label">Hours</div></div>
+<div><div class="num" id="mins">0</div><div class="label">Min</div></div>
+<div><div class="num" id="secs">0</div><div class="label">Sec</div></div>
+</div>
+</div>
+<div class="tabs">
+<div class="tab active" onclick="showTab('regional')">🏆 Regional Battle</div>
+<div class="tab" onclick="showTab('individual')">👤 Individual Standings</div>
+<div class="tab" onclick="showTab('rules')">📋 Scoring Rules</div>
+</div>
+<div class="content">
+<div id="tab-regional">
+<div class="region-cards">
+<div class="region-card leader">
+<div class="region-name">WEST</div>
+<div class="region-pts">119</div>
+<div class="region-pts-label">TOTAL POINTS</div>
+<div class="breakdown">
+<div class="breakdown-item"><div class="val">26</div><div class="lbl">Sign Pts (12)</div></div>
+<div class="breakdown-item"><div class="val">36</div><div class="lbl">Act Pts (26)</div></div>
+<div class="breakdown-item"><div class="val">57</div><div class="lbl">Loan Pts (13)</div></div>
+</div>
+</div>
+<div class="region-card">
+<div class="region-name">EAST</div>
+<div class="region-pts">101</div>
+<div class="region-pts-label">TOTAL POINTS</div>
+<div class="breakdown">
+<div class="breakdown-item"><div class="val">37</div><div class="lbl">Sign Pts (17)</div></div>
+<div class="breakdown-item"><div class="val">28</div><div class="lbl">Act Pts (16)</div></div>
+<div class="breakdown-item"><div class="val">36</div><div class="lbl">Loan Pts (9)</div></div>
+</div>
+</div>
+<div class="region-card">
+<div class="region-name">CENTRAL</div>
+<div class="region-pts">82</div>
+<div class="region-pts-label">TOTAL POINTS</div>
+<div class="breakdown">
+<div class="breakdown-item"><div class="val">17</div><div class="lbl">Sign Pts (9)</div></div>
+<div class="breakdown-item"><div class="val">44</div><div class="lbl">Act Pts (24)</div></div>
+<div class="breakdown-item"><div class="val">21</div><div class="lbl">Loan Pts (7)</div></div>
+</div>
+</div>
+</div>
+</div>
+<div id="tab-individual" class="hidden">
+<div class="filters">
+<div class="filter-btn active" onclick="filterRegion('All')">All</div>
+<div class="filter-btn" onclick="filterRegion('East')">East</div>
+<div class="filter-btn" onclick="filterRegion('West')">West</div>
+<div class="filter-btn" onclick="filterRegion('Central')">Central</div>
+</div>
+<table>
+<thead><tr><th onclick="sortTable(0)">#</th><th onclick="sortTable(1)">Name</th><th onclick="sortTable(2)">Manager</th><th onclick="sortTable(3)">Region</th><th onclick="sortTable(4)">Signs</th><th onclick="sortTable(5)">Acts</th><th onclick="sortTable(6)">Loans</th><th onclick="sortTable(7)">Total</th></tr></thead>
+<tbody id="leaderboard"></tbody>
+</table>
+</div>
+<div id="tab-rules" class="hidden">
+<div class="rules-section">
+<h3>HOW TO EARN POINTS</h3>
+<div class="rule-card">
+<h4>✍️ Signs — New Signed Accounts</h4>
+<div class="rule-row"><span>Services / Retail</span><span class="rule-pts">3 pts</span></div>
+<div class="rule-row"><span>F&B</span><span class="rule-pts">1 pt</span></div>
+</div>
+<div class="rule-card">
+<h4>⚡ Activations — Live and Processing</h4>
+<div class="rule-row"><span>Services / Retail</span><span class="rule-pts">3 pts</span></div>
+<div class="rule-row"><span>F&B</span><span class="rule-pts">1 pt</span></div>
+</div>
+<div class="rule-card double-bonus">
+<h4>🔥 DOUBLE POINTS BONUS</h4>
+<div class="rule-row"><span>Signed + Activated in July (250k min)</span><span class="rule-pts">2× ALL VERTICALS</span></div>
+</div>
+<div class="rule-card">
+<h4>💰 Square Loans — All Verticals Eligible</h4>
+<div class="rule-row"><span>Above $75k</span><span class="rule-pts">9 pts</span></div>
+<div class="rule-row"><span>Up to $75k</span><span class="rule-pts">6 pts</span></div>
+<div class="rule-row"><span>Up to $25k</span><span class="rule-pts">3 pts</span></div>
+</div>
+</div>
+<div class="rules-section">
+<h3>BONUS POINTS</h3>
+<div class="rule-card">
+<h4>📸 Selfie Day — Wednesdays</h4>
+<div class="rule-row"><span>Lizzy picks 1 winner org-wide</span><span class="rule-pts">+10 pts</span></div>
+</div>
+<div class="rule-card">
+<h4>💬 Slack Engagement Bonus</h4>
+<div class="rule-row"><span>Most engaged region wins</span><span class="rule-pts">+10 pts</span></div>
+</div>
+</div>
+<div class="rules-section">
+<h3>PRIZE</h3>
+<div class="rule-card prize-card">
+<h4>🏆 Trophy + Pride</h4>
+<p style="color:#ccc;margin-top:10px">WINNING REGION · EAST vs. WEST vs. CENTRAL</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Created by Nate Obermark, Phillip Skillern & Steve McMahon</p>
+<p style="margin-top:5px">Data refreshed from Snowflake · Last updated: July 9, 2026</p>
+</div>
+<script>
+const reps=[
+{name:"Brian Johnson",mgr:"Scott Hockaday",region:"Central",signs:3,acts:8,loans:3,total:14},
+{name:"Brady Katz",mgr:"Steve McMahon",region:"Central",signs:4,acts:6,loans:3,total:13},
+{name:"Diego Garcia",mgr:"Jonathan Sheridan",region:"West",signs:3,acts:1,loans:9,total:13},
+{name:"Hector Acedo",mgr:"Bryan Carter",region:"West",signs:0,acts:3,loans:9,total:12},
+{name:"Jeffrey Huyen",mgr:"Jonathan DeJesus",region:"East",signs:0,acts:1,loans:9,total:10},
+{name:"Isaiah Hayes",mgr:"Nate Obermark",region:"West",signs:0,acts:0,loans:9,total:9},
+{name:"Dennis C. DeCicco",mgr:"Zachary Farley",region:"East",signs:4,acts:4,loans:0,total:8},
+{name:"Maggie Luo",mgr:"Scott Hockaday",region:"Central",signs:3,acts:5,loans:0,total:8},
+{name:"Fahad Hasnain",mgr:"Jonathan DeJesus",region:"East",signs:4,acts:3,loans:0,total:7},
+{name:"Michael Okelley",mgr:"Matthew Vitale",region:"Central",signs:1,acts:3,loans:3,total:7},
+{name:"Leandro Rodrigues",mgr:"Meghan McFarlane",region:"East",signs:0,acts:1,loans:6,total:7},
+{name:"Alyssa Singh",mgr:"Nate Obermark",region:"West",signs:0,acts:1,loans:6,total:7},
+{name:"Matt Milos",mgr:"Steve McMahon",region:"Central",signs:0,acts:4,loans:3,total:7},
+{name:"Erick Clausen",mgr:"Ramon Quevedo",region:"East",signs:4,acts:0,loans:3,total:7},
+{name:"William McQuaig",mgr:"Phillip Skillern",region:"East",signs:3,acts:3,loans:0,total:6}
+];
+let currentFilter='All',sortCol=7,sortAsc=false;
+function showTab(t){
+document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',['regional','individual','rules'][i]===t));
+['regional','individual','rules'].forEach(id=>document.getElementById('tab-'+id).classList.toggle('hidden',id!==t));
+}
+function filterRegion(r){
+currentFilter=r;
+document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.textContent===r));
+renderTable();
+}
+function sortTable(col){
+if(sortCol===col)sortAsc=!sortAsc;else{sortCol=col;sortAsc=col<4;}
+renderTable();
+}
+function renderTable(){
+const filtered=currentFilter==='All'?reps:reps.filter(r=>r.region===currentFilter);
+const keys=['rank','name','mgr','region','signs','acts','loans','total'];
+filtered.sort((a,b)=>{
+const k=keys[sortCol];if(k==='rank')return 0;
+const va=a[k],vb=b[k];
+if(typeof va==='number')return sortAsc?va-vb:vb-va;
+return sortAsc?String(va).localeCompare(String(vb)):String(vb).localeCompare(String(va));
+});
+const tbody=document.getElementById('leaderboard');
+tbody.innerHTML=filtered.map((r,i)=>`<tr>
+<td class="rank">${i+1}</td><td>${r.name}</td><td>${r.mgr}</td>
+<td><span class="region-tag ${r.region}">${r.region}</span></td>
+<td>${r.signs}</td><td>${r.acts}</td><td>${r.loans}</td>
+<td style="font-weight:700;color:#ffd700">${r.total}</td></tr>`).join('');
+}
+function updateCountdown(){
+const end=new Date('2026-08-01T00:00:00').getTime();
+const now=Date.now();const diff=Math.max(0,end-now);
+document.getElementById('days').textContent=Math.floor(diff/86400000);
+document.getElementById('hours').textContent=Math.floor((diff%86400000)/3600000);
+document.getElementById('mins').textContent=Math.floor((diff%3600000)/60000);
+document.getElementById('secs').textContent=Math.floor((diff%60000)/1000);
+}
+renderTable();updateCountdown();setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>

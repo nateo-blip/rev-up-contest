@@ -1,0 +1,40 @@
+version: "1.0.0"
+title: "REV UP Selfie Friday Report"
+description: |
+  Runs every Friday morning at 8am ET during the Q3 Fast Start contest (July 1 - Aug 1, 2026).
+  Tallies Selfie Wednesday submissions from #us-field-players-only Slack channel,
+  determines regional winner, and updates the Google Doc tracker.
+
+prompt: |
+  Run the REV UP Selfie Wednesday tally for the most recent Wednesday.
+
+  STEP 1: Run the selfie tally script:
+  cd /Users/nateobermark/rev-up-contest && python3 scripts/selfie_tally.py
+
+  STEP 2: Read the generated JSON report from /Users/nateobermark/rev-up-contest/reports/
+  (the file will be named selfie_tally_YYYY-MM-DD.json for the most recent Wednesday)
+
+  STEP 3: Read the current Google Doc content:
+  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools google-drive read --id-or-url "https://docs.google.com/document/d/1CqDjD3cykifzwhnKmwgpNt-lgxbI1fCCN_Ks9sK1SfY/edit"
+
+  STEP 4: Update the Google Doc by prepending the new week's results above the previous content.
+  Use: sq agent-tools google-drive upsert --file-id "1CqDjD3cykifzwhnKmwgpNt-lgxbI1fCCN_Ks9sK1SfY" --mime-type "application/vnd.google-apps.document" --body "<full updated content>"
+
+  Format the new week like:
+  ## Selfie Day N (date)
+  **Final tally**
+  | Region | Selfies | Reps |
+  East: X, Central: Y, West: Z
+  Total selfies counted: N
+  🥇 [winner]: count
+  🥈 [2nd]: count
+  🥉 [3rd]: count
+  🏆 Region Winner: [region] (+10 pts)
+  ⭐ Lizzy's Pick: [TBD]
+  [Individual rep lists per region]
+
+  STEP 5: Print a summary confirming the update was successful.
+
+extensions:
+  - name: developer
+    type: builtin

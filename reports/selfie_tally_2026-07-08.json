@@ -1,0 +1,344 @@
+{
+  "date": "2026-07-08",
+  "total_selfies": 47,
+  "total_reps": 45,
+  "winner_region": "East",
+  "lizzys_pick": null,
+  "regions": {
+    "East": {
+      "selfie_count": 20,
+      "rep_count": 18,
+      "reps": [
+        {
+          "name": "Michael Bajuz",
+          "ldap": "mbajuz",
+          "lead": "Zachary Farley",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Tom Brady",
+          "ldap": "tbrady",
+          "lead": "Alessandra Verne",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Leo Osmani",
+          "ldap": "leoosmani",
+          "lead": "Jonathan DeJesus",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Carl Carbo",
+          "ldap": "ccarbo",
+          "lead": "Dan Vazquez",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Miguel Martinez",
+          "ldap": "migmartinez",
+          "lead": "Jonathan DeJesus",
+          "posts": 2,
+          "images": 2
+        },
+        {
+          "name": "Gustavo Quiroz",
+          "ldap": "gquiroz",
+          "lead": "Ramon Quevedo",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Yoni Friedman",
+          "ldap": "yonifriedman",
+          "lead": "Zachary Farley",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Elliot Hernandez",
+          "ldap": "ellioth",
+          "lead": "Jonathan DeJesus",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Luke DeMarco",
+          "ldap": "lukedemarco",
+          "lead": "Dan Vazquez",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "John Nunnally",
+          "ldap": "jnunnally",
+          "lead": "Kristin Moore",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Katrena Pecci",
+          "ldap": "kpecci",
+          "lead": "Dan Cook",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "River Sava",
+          "ldap": "rsava",
+          "lead": "Alessandra Verne",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Gabe Topping",
+          "ldap": "gtopping",
+          "lead": "Dan Cook",
+          "posts": 1,
+          "images": 2
+        },
+        {
+          "name": "Brandon Parlante",
+          "ldap": "bparlante",
+          "lead": "Zachary Farley",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "John Dagostaro",
+          "ldap": "jdagostaro",
+          "lead": "Dan Vazquez",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Daniel Faynerman",
+          "ldap": "dfaynerman",
+          "lead": "Zachary Farley",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Luis Tejada",
+          "ldap": "luistejada",
+          "lead": "Dan Vazquez",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Hernan Madrid",
+          "ldap": "hernanmadrid",
+          "lead": "Alessandra Verne",
+          "posts": 1,
+          "images": 1
+        }
+      ]
+    },
+    "Central": {
+      "selfie_count": 15,
+      "rep_count": 15,
+      "reps": [
+        {
+          "name": "Wayne Turner",
+          "ldap": "wturner",
+          "lead": "Scott Hockaday",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Alan Prieto",
+          "ldap": "alanprieto",
+          "lead": "Steve McMahon",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Stephen Stinchcomb",
+          "ldap": "sstinchcomb",
+          "lead": "Derek Kopkin",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Matt Taki",
+          "ldap": "mtaki",
+          "lead": "Steve McMahon",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Daniel Bodnar",
+          "ldap": "dbodnar",
+          "lead": "Chris Moran",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Sam Agnew-Wieland",
+          "ldap": "samagnewwieland",
+          "lead": "Chris Moran",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Quincy Stang",
+          "ldap": "qstang",
+          "lead": "Chris Moran",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Kiana Desrosiers",
+          "ldap": "kdesrosiers",
+          "lead": "Scott Hockaday",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Brady Katz",
+          "ldap": "bkatz",
+          "lead": "Steve McMahon",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Jen Nelson",
+          "ldap": "jennelson",
+          "lead": "Scott Hockaday",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Ashley Kay",
+          "ldap": "akay",
+          "lead": "Matthew Vitale",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Brittni Fitzgerald",
+          "ldap": "brittni",
+          "lead": "Sean Avery",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Katy Russo",
+          "ldap": "krusso",
+          "lead": "Sean Avery",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Chris Neal",
+          "ldap": "cneal",
+          "lead": "Chris Moran",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Boban Perovic",
+          "ldap": "boban",
+          "lead": "Sean Avery",
+          "posts": 1,
+          "images": 1
+        }
+      ]
+    },
+    "West": {
+      "selfie_count": 12,
+      "rep_count": 12,
+      "reps": [
+        {
+          "name": "Justin Johnson",
+          "ldap": "justinj",
+          "lead": "Colter Wilson",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Bob Afable",
+          "ldap": "boba",
+          "lead": "Bryan Carter",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Alyssa Singh",
+          "ldap": "alyssasingh",
+          "lead": "Nate Obermark",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Colter Wilson",
+          "ldap": "colter",
+          "lead": "Gloria Pe\u00f1a",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Sonia Ning",
+          "ldap": "sning",
+          "lead": "Bryan Carter",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Terence Waclawik",
+          "ldap": "twaclawik",
+          "lead": "Jonathan Sheridan",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Mario Duran",
+          "ldap": "mduran",
+          "lead": "Colter Wilson",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Vivian Rios",
+          "ldap": "vivianrios",
+          "lead": "Brett Rousse",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Aaron Davidson",
+          "ldap": "aarond",
+          "lead": "Nate Obermark",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Victor Guevara",
+          "ldap": "vguevara",
+          "lead": "Nate Obermark",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Charles Kang",
+          "ldap": "charleskang",
+          "lead": "Bryan Carter",
+          "posts": 1,
+          "images": 1
+        },
+        {
+          "name": "Taron Huckle",
+          "ldap": "taron",
+          "lead": "Nate Obermark",
+          "posts": 1,
+          "images": 1
+        }
+      ]
+    }
+  },
+  "unmatched": [],
+  "generated_at": "2026-07-09T13:18:19.299249"
+}
