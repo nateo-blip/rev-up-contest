@@ -1,0 +1,28 @@
+version: "1.0.0"
+title: "REV UP Daily Data Refresh"
+description: |
+  Runs daily at 7am ET to refresh contest leaderboard data from Snowflake
+  and update the app with current standings.
+
+prompt: |
+  Refresh the REV UP Q3 Fast Start contest data.
+
+  STEP 1: Run the leaderboard query against Snowflake to get current standings.
+  Use this command:
+  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools query-expert execute-sql --sql "SELECT * FROM APP_SALES.APP_SALES_ETL.VW_REVUP_REGIONAL_STANDINGS ORDER BY TOTAL_POINTS DESC"
+
+  STEP 2: Also get individual standings:
+  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools query-expert execute-sql --sql "SELECT * FROM APP_SALES.APP_SALES_ETL.VW_REVUP_LEADERBOARD ORDER BY TOTAL_POINTS DESC LIMIT 20"
+
+  STEP 3: Update the app/index.html file at /Users/nateobermark/rev-up-contest/app/index.html
+  with the fresh data from the queries above. Update the regional totals and individual
+  standings table with the new numbers. Update the "Last updated" timestamp in the footer.
+
+  STEP 4: Commit and push the changes:
+  cd /Users/nateobermark/rev-up-contest && git add -A && git commit -m "Daily refresh: $(date +%Y-%m-%d)" && EXTRA_ALLOWED_ORGS="nateo-blip" git push
+
+  STEP 5: Print a summary of the updated standings.
+
+extensions:
+  - name: developer
+    type: builtin
