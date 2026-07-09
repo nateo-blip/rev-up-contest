@@ -179,7 +179,7 @@ winner_region = sorted_regions[0][0] if sorted_regions else "TBD"
 print(f"\n{'='*50}")
 print(f"🏆 SELFIE WEDNESDAY WINNER: {winner_region} (+10 pts)")
 print(f"{'='*50}")
-print(f"\n📌 Lizzy's Pick (org-wide +10 pts): [TO BE ANNOUNCED]")
+print(f"\n📌 Ali's Pick (org-wide +10 pts): [TO BE ANNOUNCED]")
 print(f"\nGenerated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 # Also output JSON for programmatic use
@@ -193,7 +193,7 @@ report = {
         'rep_count': len(data['reps']),
         'reps': data['reps']
     } for region, data in sorted_regions},
-    'lizzys_pick': None,
+    'alis_pick': None,
     'generated_at': datetime.now().isoformat()
 }
 

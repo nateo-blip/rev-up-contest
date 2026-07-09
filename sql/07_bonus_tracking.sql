@@ -1,5 +1,5 @@
 -- REV UP Contest: Bonus Points Tracking
--- Selfie Day (Wednesdays): +10 pts, Lizzy picks 1 winner org-wide
+-- Selfie Day (Wednesdays): +10 pts, Ali picks 1 winner org-wide
 -- Slack Engagement Bonus: +10 pts, most engaged region wins
 -- These are manually awarded - this table stores the entries
 
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS APP_SALES.APP_SALES_ETL.REVUP_BONUS_POINTS (
     REP_NAME VARCHAR(200),
     REGION VARCHAR(50),               -- Required for Slack Engagement
     POINTS NUMBER DEFAULT 10,
-    AWARDED_BY VARCHAR(100),          -- Who awarded (e.g., 'Lizzy' for Selfie Day)
+    AWARDED_BY VARCHAR(100),          -- Who awarded (e.g., 'Ali' for Selfie Day)
     NOTES VARCHAR(500),
     CREATED_AT TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
 );

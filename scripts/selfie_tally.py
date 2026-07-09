@@ -182,7 +182,7 @@ def count_selfies(messages, target_date, region_map):
     return region_tally, unmatched
 
 
-def generate_report(target_date, region_tally, unmatched, lizzys_pick=None):
+def generate_report(target_date, region_tally, unmatched, alis_pick=None):
     """Generate the tally report (text + JSON)."""
     sorted_regions = sorted(region_tally.items(), key=lambda x: -x[1]["total_images"])
     total_selfies = sum(r["total_images"] for _, r in sorted_regions)
@@ -210,10 +210,10 @@ def generate_report(target_date, region_tally, unmatched, lizzys_pick=None):
     lines.append("")
     lines.append(f"🏆 Region Winner: {winner_region} (+10 pts)")
 
-    if lizzys_pick:
-        lines.append(f"⭐ Lizzy's Pick: {lizzys_pick} (+10 pts)")
+    if alis_pick:
+        lines.append(f"⭐ Ali's Pick: {alis_pick} (+10 pts)")
     else:
-        lines.append("⭐ Lizzy's Pick: [TBD]")
+        lines.append("⭐ Ali's Pick: [TBD]")
 
     lines.append("")
     lines.append("--- Individual Submissions ---")
@@ -238,7 +238,7 @@ def generate_report(target_date, region_tally, unmatched, lizzys_pick=None):
         "total_selfies": total_selfies,
         "total_reps": total_reps,
         "winner_region": winner_region,
-        "lizzys_pick": lizzys_pick,
+        "alis_pick": alis_pick,
         "regions": {},
         "unmatched": unmatched,
         "generated_at": datetime.now().isoformat(),
@@ -311,7 +311,7 @@ def main():
     parser.add_argument("--date", help="Target date (YYYY-MM-DD), defaults to most recent Wednesday")
     parser.add_argument("--update-doc", action="store_true", help="Update the Google Doc with results")
     parser.add_argument("--post-slack", action="store_true", help="Post results to Slack channel")
-    parser.add_argument("--lizzys-pick", help="Name of Lizzy's pick winner")
+    parser.add_argument("--alis-pick", help="Name of Ali's pick winner")
     args = parser.parse_args()
 
     target_date = args.date or get_most_recent_wednesday()
@@ -335,7 +335,7 @@ def main():
 
     # Generate report
     text_report, json_report = generate_report(
-        target_date, region_tally, unmatched, args.lizzys_pick
+        target_date, region_tally, unmatched, args.alis_pick
     )
 
     # Print report

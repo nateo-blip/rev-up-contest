@@ -9,7 +9,7 @@ prompt: |
   REV UP contest update reminder.
 
   Use this command:
-  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools slack post-message --channel "U08QU3XLL2Z" --text "🏆 *Happy Friday, Phil!* Time for your REV UP Q3 Fast Start update.\n\n📋 *Your Friday checklist:*\n• Review the weekly selfie tally (auto-generated in the Google Doc)\n• Confirm Lizzy's Selfie Day winner pick\n• Check end-of-week regional standings\n• Celebrate wins with your team!\n\n📊 The weekly report just dropped — check the Google Doc for the latest selfie standings."
+  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools slack post-message --channel "U08QU3XLL2Z" --text "🏆 *Happy Friday, Phil!* Time for your REV UP Q3 Fast Start update.\n\n📋 *Your Friday checklist:*\n• Review the weekly selfie tally (auto-generated in the Google Doc)\n• Confirm Ali's Selfie Day winner pick\n• Check end-of-week regional standings\n• Celebrate wins with your team!\n\n📊 The weekly report just dropped — check the Google Doc for the latest selfie standings."
 
   That's it. Just send the message and confirm it was delivered.
 

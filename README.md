@@ -36,7 +36,7 @@ REV UP is a Q3 Fast Start contest for all Field Sales reps across East, West, an
 ### Bonus Points
 | Bonus | Points | Frequency |
 |-------|--------|-----------|
-| Selfie Day | +10 pts | Wednesdays (Lizzy picks 1 winner org-wide) |
+| Selfie Day | +10 pts | Wednesdays (Ali picks 1 winner org-wide) |
 | Slack Engagement | +10 pts | Most engaged region wins |
 
 ## Prize
