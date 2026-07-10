@@ -24,12 +24,56 @@ GOOGLE_DOC_ID = "1CqDjD3cykifzwhnKmwgpNt-lgxbI1fCCN_Ks9sK1SfY"
 REPORTS_DIR = Path(__file__).parent.parent / "reports"
 
 # Region overrides for reps whose Snowflake data doesn't match actual org structure
+# East = Dan Vazquez's org (incl. Steve McMahon's sub-team)
+# Central = Derek Kopkin's org (incl. Phil Skillern, Ramon Quevedo, Alessandra Verne)
+# West = Gloria Peña's org (incl. Nate Obermark, Colter Wilson)
 REGION_OVERRIDES = {
-    "William McQuaig": "Central",    # Under Phillip Skillern
-    "Matt Milos": "East",            # Under Steve McMahon
-    "Erick Clausen": "Central",      # Under Ramon Quevedo
-    "Brady Katz": "East",            # Under Steve McMahon
-    "River Sava": "Central",         # Under Alessandra Verne
+    # Steve McMahon's team → EAST (Snowflake says Central)
+    "Brady Katz": "East",
+    "Matt Milos": "East",
+    "Alan Prieto": "East",
+    "Chris Mendez": "East",
+    "Matt Taki": "East",
+    "Rebecca Morgan": "East",
+    "Steven Bidochka": "East",
+    # Phillip Skillern's direct reports → CENTRAL (Snowflake says East)
+    "William McQuaig": "Central",
+    "Alexander Rodriguez": "Central",
+    "Anjelica Rembert": "Central",
+    "Chet Simmons": "Central",
+    "Chris Claiborne": "Central",
+    "DONOVAN Cuffie": "Central",
+    "Kristen Goff": "Central",
+    "Lenaye Doussan": "Central",
+    "Ron Akins": "Central",
+    "Sammy Weitz": "Central",
+    "Tracy Cash": "Central",
+    # Ramon Quevedo's team → CENTRAL (Snowflake says East)
+    "Erick Clausen": "Central",
+    "Gustavo Quiroz": "Central",
+    "Dwight Richert": "Central",
+    "Faith Philpot": "Central",
+    "Jose Nunez": "Central",
+    "Julia Mulberry": "Central",
+    "Manuel Galindo Salazar": "Central",
+    "Marlon Salamanca": "Central",
+    "Robert Maher": "Central",
+    # Alessandra Verne's team → CENTRAL (Snowflake says East)
+    "River Sava": "Central",
+    "Hernan Madrid": "Central",
+    "Tom Brady": "Central",
+    "Carolyn Tannura": "Central",
+    "Connor White": "Central",
+    "Erik Murphy": "Central",
+    "Kristian Girolamo": "Central",
+    "Matthew Martinez": "Central",
+    "Daniel Mance": "Central",
+    # Dan Vazquez → EAST (Snowflake says West)
+    "Dan Vazquez": "East",
+    # Devon Brent (under Scott Hockaday) → CENTRAL (no region in Snowflake)
+    "Devon Brent": "Central",
+    # Derek Kopkin → CENTRAL (no region in Snowflake)
+    "Derek Kopkin": "Central",
 }
 
 
