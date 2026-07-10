@@ -9,7 +9,7 @@ Apply these corrections in any view or report:
 | Matt Milos | Steve McMahon | Central | **East** |
 | Erick Clausen | Ramon Quevedo | East | **Central** |
 | Brady Katz | Steve McMahon | Central | **East** |
-| River Sava | Alessandra | East | **Central** |
+| River Sava | Alessandra Verne | East | **Central** |
 
 ## SQL Fix (add to WHERE or CASE statements):
 

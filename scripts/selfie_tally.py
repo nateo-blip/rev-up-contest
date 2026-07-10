@@ -29,7 +29,7 @@ REGION_OVERRIDES = {
     "Matt Milos": "East",            # Under Steve McMahon
     "Erick Clausen": "Central",      # Under Ramon Quevedo
     "Brady Katz": "East",            # Under Steve McMahon
-    "River Sava": "Central",         # Under Alessandra
+    "River Sava": "Central",         # Under Alessandra Verne
 }
 
 
