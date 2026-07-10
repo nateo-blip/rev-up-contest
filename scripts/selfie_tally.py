@@ -23,6 +23,15 @@ CHANNEL = "us-field-players-only"
 GOOGLE_DOC_ID = "1CqDjD3cykifzwhnKmwgpNt-lgxbI1fCCN_Ks9sK1SfY"
 REPORTS_DIR = Path(__file__).parent.parent / "reports"
 
+# Region overrides for reps whose Snowflake data doesn't match actual org structure
+REGION_OVERRIDES = {
+    "William McQuaig": "Central",    # Under Phillip Skillern
+    "Matt Milos": "East",            # Under Steve McMahon
+    "Erick Clausen": "Central",      # Under Ramon Quevedo
+    "Brady Katz": "East",            # Under Steve McMahon
+    "River Sava": "Central",         # Under Alessandra
+}
+
 
 def run_cmd(cmd, check=True):
     """Run a shell command and return stdout."""
@@ -124,6 +133,14 @@ def fetch_region_map():
             "lead": row.get("DIRECT_LEAD", "Unknown"),
         }
     print(f"   {len(region_map)} reps with region assignments loaded")
+
+    # Apply region overrides for known mismatches
+    for ldap, info in region_map.items():
+        if info["name"] in REGION_OVERRIDES:
+            old_region = info["region"]
+            info["region"] = REGION_OVERRIDES[info["name"]]
+            print(f"   Override: {info['name']} {old_region} → {info['region']}")
+
     return region_map
 
 
