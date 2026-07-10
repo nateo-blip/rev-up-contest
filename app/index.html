@@ -137,13 +137,13 @@ tr:hover td{background:#111}
 <div class="selfie-summary" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:30px">
 <div class="region-card" style="border-color:#5ba3e6">
 <div class="region-name">EAST</div>
-<div class="region-pts" style="color:#5ba3e6">21</div>
+<div class="region-pts" style="color:#5ba3e6">20</div>
 <div class="region-pts-label">SELFIES (Week 1)</div>
 <div style="color:#ffd700;font-size:0.9rem;margin-top:10px">🏆 Week 1 Winner (+10 pts) + Ali's Pick (+10 pts)</div>
 </div>
 <div class="region-card">
 <div class="region-name">CENTRAL</div>
-<div class="region-pts" style="color:#5be65b">14</div>
+<div class="region-pts" style="color:#5be65b">15</div>
 <div class="region-pts-label">SELFIES (Week 1)</div>
 </div>
 <div class="region-card">
@@ -157,7 +157,7 @@ tr:hover td{background:#111}
 <table style="margin-top:15px">
 <thead><tr><th>Week</th><th>Date</th><th>East</th><th>Central</th><th>West</th><th>Total</th><th>Region Winner</th><th>⭐ Ali's Pick</th></tr></thead>
 <tbody>
-<tr><td style="font-weight:700">1</td><td>July 8</td><td>21</td><td>14</td><td>12</td><td>47</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">Brady Katz (East)</td></tr>
+<tr><td style="font-weight:700">1</td><td>July 8</td><td>20</td><td>15</td><td>12</td><td>47</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">Brady Katz (East)</td></tr>
 <tr style="color:#555"><td>2</td><td>July 15</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 <tr style="color:#555"><td>3</td><td>July 22</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 <tr style="color:#555"><td>4</td><td>July 29</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
@@ -168,15 +168,15 @@ tr:hover td{background:#111}
 <h4>🏅 Week 1 Top Selfie Posters (July 8)</h4>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:15px">
 <div>
-<h5 style="color:#5ba3e6;margin-bottom:10px">East (21 selfies)</h5>
+<h5 style="color:#5ba3e6;margin-bottom:10px">East (20 selfies)</h5>
 <div style="font-size:0.85rem;color:#ccc;line-height:1.8" id="selfie-east">
-Fahad Hasnain, Dennis DeCicco, Erick Clausen, William McQuaig, Jeffrey Huyen, Leandro Rodrigues, Sonia Ning, Kaitlyn Moran, Frankie Ramos, Youssef Elzein, Terrence Hicks, Derrick Wilkins, Josh Berman, Dominic Ferrara, Ryan Dougherty, John Tully, Megan Hess, Rashad Jennings, Brady Katz
+Fahad Hasnain, Dennis DeCicco, Erick Clausen, Jeffrey Huyen, Leandro Rodrigues, Sonia Ning, Kaitlyn Moran, Frankie Ramos, Youssef Elzein, Terrence Hicks, Derrick Wilkins, Josh Berman, Dominic Ferrara, Ryan Dougherty, John Tully, Megan Hess, Rashad Jennings, Brady Katz
 </div>
 </div>
 <div>
-<h5 style="color:#5be65b;margin-bottom:10px">Central (14 selfies)</h5>
+<h5 style="color:#5be65b;margin-bottom:10px">Central (15 selfies)</h5>
 <div style="font-size:0.85rem;color:#ccc;line-height:1.8" id="selfie-central">
-Brian Johnson, Maggie Luo, Michael Okelley, Matt Milos, Stephen Stinchcomb, Kaitlyn Buss, Jayson Peltier, Zach Schultz, Bryce Buchanan, Bre Lockhart, Mitch Turley, Jared Kolar, Nolan Hoffman, Tyler Kuehl
+Brian Johnson, Maggie Luo, Michael Okelley, Matt Milos, Stephen Stinchcomb, Kaitlyn Buss, Jayson Peltier, Zach Schultz, Bryce Buchanan, Bre Lockhart, Mitch Turley, Jared Kolar, Nolan Hoffman, Tyler Kuehl, William McQuaig
 </div>
 </div>
 <div>
@@ -262,7 +262,7 @@ const reps=[
 {name:"Alyssa Singh",mgr:"Nate Obermark",region:"West",signs:0,acts:1,loans:6,total:7},
 {name:"Matt Milos",mgr:"Steve McMahon",region:"Central",signs:0,acts:4,loans:3,total:7},
 {name:"Erick Clausen",mgr:"Ramon Quevedo",region:"East",signs:4,acts:0,loans:3,total:7},
-{name:"William McQuaig",mgr:"Phillip Skillern",region:"East",signs:3,acts:3,loans:0,total:6}
+{name:"William McQuaig",mgr:"Phillip Skillern",region:"Central",signs:3,acts:3,loans:0,total:6}
 ];
 let currentFilter='All',sortCol=7,sortAsc=false;
 function showTab(t){
