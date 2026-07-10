@@ -38,7 +38,10 @@ REGION_OVERRIDES = {
     "Steven Bidochka": "East",
     # Chris Moran's team → EAST (Snowflake says Central)
     "Chris Moran": "East",
+    "Amanda Wright": "East",
+    "Chris Neal": "East",
     "Daniel Bodnar": "East",
+    "Daryl Whitley": "East",
     "Kellyn Eagan": "East",
     "Quincy Stang": "East",
     "Sam Agnew-Wieland": "East",
@@ -46,7 +49,10 @@ REGION_OVERRIDES = {
     "Sean Avery": "East",
     "Boban Perovic": "East",
     "Brittni Fitzgerald": "East",
+    "Eddie Brooke": "East",
+    "Fabian Pineda": "East",
     "Katy Russo": "East",
+    "Sylvia Salimi": "East",
     # Phillip Skillern's direct reports → CENTRAL (Snowflake says East)
     "William McQuaig": "Central",
     "Alexander Rodriguez": "Central",
