@@ -1,0 +1,53 @@
+# REV UP Q3 Fast Start Contest — Project Context
+
+## What This Is
+A regional sales contest (July 1 – Aug 1, 2026) between East, West, and Central field sales teams.
+Created by Nate Obermark (West), Phillip Skillern (Central), and Steve McMahon (East).
+
+## Key Files
+- `app/index.html` — Single-file interactive leaderboard app (HTML/CSS/JS, dark theme)
+- `scripts/selfie_tally.py` — Reads Slack #us-field-players-only + Snowflake, counts selfies by region
+- `sql/09_full_leaderboard_corrected.sql` — The canonical scoring query (deduplicated, F&B priority fix)
+- `sql/01-08` — Individual view definitions (signs, activations, loans, double bonus, etc.)
+- `reports/` — JSON/CSV outputs from selfie tallies
+
+## Scoring Rules
+- **Signs:** Services/Retail = 3 pts, F&B = 1 pt (from SMB_CONTRACT_OPPORTUNITIES)
+- **Activations:** Services/Retail = 3 pts, F&B = 1 pt (from ACTIVATION_CREDIT_VIEW)
+- **Double Points Bonus:** Signed + Activated same merchant in July, ≥$250k → earn both sign + act pts again
+- **Loans:** >$75k = 9 pts, $25k–$75k = 6 pts, <$25k = 3 pts (from PLAN_GROUPS)
+- **Selfie Day (Wednesdays):** +10 pts to region with most selfies, +10 pts for Ali Howard's pick
+
+## Data Sources (Snowflake)
+- `APP_SALES.APP_SALES_ETL.SMB_CONTRACT_OPPORTUNITIES` — Signs
+- `APP_SALES.APP_SALES_ETL.ACTIVATION_CREDIT_VIEW` — Activations (use ACTIVATION_OWNER_LDAP)
+- `APP_CAPITAL.APP_CAPITAL.PLAN_GROUPS` — Loans (join via VDIM_USER → SMB_CONTRACT_OPPORTUNITIES)
+- `APP_BI.HEXAGON.VDIM_USER` — Merchant vertical (BUSINESS_CATEGORY)
+- `APP_SALES.APP_SALES_ETL.FACT_FIELD_SALES_EMPLOYMENT_CURRENT` — Rep roster, region, manager
+
+## Critical Data Caveats
+1. **VDIM_USER has multiple rows per merchant** — Always deduplicate with QUALIFY ROW_NUMBER() and prioritize food_and_drink: `ORDER BY CASE WHEN BUSINESS_CATEGORY = 'food_and_drink' THEN 0 ELSE 1 END`
+2. **Snowflake REGION field is unreliable** — Use DIRECT_LEAD manager mapping instead:
+   - East managers: Steve McMahon, Jonathan DeJesus, Zachary Farley, Dan Cook, Kristin Moore, Meghan McFarlane, Chris Moran, Sean Avery
+   - Central managers: Phillip Skillern, Ramon Quevedo, Alessandra Verne, Scott Hockaday, Matthew Vitale, Stephen Stinchcomb
+   - West managers: Nate Obermark, Colter Wilson, Bryan Carter, Brett Rousse, Jonathan Sheridan, Alison Rushworth, Gareth James
+3. **Manager name in Snowflake is "Phillip Skillern"** (not "Phil Skillern")
+4. **Column names:** OPPORTUNITY_AMOUNT_LOCAL (not OPPORTUNITY_AMOUNT), ACTIVE_STATUS (not EMPLOYMENT_STATUS), ACTIVATION_OWNER_LDAP (not LDAP in activation table)
+
+## External Resources
+- GitHub: https://github.com/nateo-blip/rev-up-contest
+- Live app: https://nateo-blip.github.io/rev-up-contest/app/
+- Google Sheet (Selfie Roster): https://docs.google.com/spreadsheets/d/1trGOn8LioVAtCbfK8dicp1rhrVKv-_DL2DHhbP0qcXs/edit
+- Google Doc (Contest Updates): https://docs.google.com/document/d/1CqDjD3cykifzwhnKmwgpNt-lgxbI1fCCN_Ks9sK1SfY/edit
+- Slack channel: #us-field-players-only (selfie submissions)
+
+## Scheduled Jobs (Goose)
+- Daily leaderboard refresh: 7am ET weekdays
+- Selfie Friday report: 8am ET Fridays
+- Slack reminders: Nate (Mon 9am CT), Steve (Wed 9am ET), Phil (Fri 9am CT)
+
+## When Updating the App
+- Use `sq agent-tools query-expert execute-query` to pull fresh data from Snowflake
+- Use the query in `sql/09_full_leaderboard_corrected.sql` as the canonical source
+- After updating app/index.html, push to GitHub: `cd /Users/nateobermark/rev-up-contest && git add -A && git commit -m "..." && git push`
+- The GitHub Pages site auto-deploys from main branch
