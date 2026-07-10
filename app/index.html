@@ -83,38 +83,38 @@ tr:hover td{background:#111}
 <div class="region-cards">
 <div class="region-card leader">
 <div class="region-name">WEST</div>
-<div class="region-pts">160</div>
+<div class="region-pts">186</div>
 <div class="region-pts-label">TOTAL POINTS</div>
 <div class="breakdown">
-<div class="breakdown-item"><div class="val">26</div><div class="lbl">Sign Pts (18)</div></div>
-<div class="breakdown-item"><div class="val">43</div><div class="lbl">Act Pts (18)</div></div>
-<div class="breakdown-item"><div class="val">75</div><div class="lbl">Loan Pts (18)</div></div>
-<div class="breakdown-item"><div class="val" style="color:#ffd700">16</div><div class="lbl">🔄 Double Bonus</div></div>
+<div class="breakdown-item"><div class="val">34</div><div class="lbl">Sign Pts (16)</div></div>
+<div class="breakdown-item"><div class="val">58</div><div class="lbl">Act Pts (38)</div></div>
+<div class="breakdown-item"><div class="val">78</div><div class="lbl">Loan Pts (16)</div></div>
+<div class="breakdown-item"><div class="val" style="color:#ffd700">16</div><div class="lbl">🔄 Double Bonus (4)</div></div>
 <div class="breakdown-item"><div class="val" style="color:#ffd700">0</div><div class="lbl">📸 Selfie Bonus</div></div>
 </div>
 </div>
 <div class="region-card">
 <div class="region-name">EAST</div>
-<div class="region-pts">138</div>
+<div class="region-pts">156</div>
 <div class="region-pts-label">TOTAL POINTS</div>
 <div class="breakdown">
-<div class="breakdown-item"><div class="val">28</div><div class="lbl">Sign Pts (16)</div></div>
-<div class="breakdown-item"><div class="val">36</div><div class="lbl">Act Pts (16)</div></div>
-<div class="breakdown-item"><div class="val">36</div><div class="lbl">Loan Pts (16)</div></div>
-<div class="breakdown-item"><div class="val" style="color:#ffd700">18</div><div class="lbl">🔄 Double Bonus</div></div>
+<div class="breakdown-item"><div class="val">36</div><div class="lbl">Sign Pts (18)</div></div>
+<div class="breakdown-item"><div class="val">43</div><div class="lbl">Act Pts (27)</div></div>
+<div class="breakdown-item"><div class="val">39</div><div class="lbl">Loan Pts (10)</div></div>
+<div class="breakdown-item"><div class="val" style="color:#ffd700">18</div><div class="lbl">🔄 Double Bonus (5)</div></div>
 <div class="breakdown-item"><div class="val" style="color:#ffd700">10</div><div class="lbl">📸 Most Selfies</div></div>
 <div class="breakdown-item"><div class="val" style="color:#ffd700">10</div><div class="lbl">📸 Ali's Pick</div></div>
 </div>
 </div>
 <div class="region-card">
 <div class="region-name">CENTRAL</div>
-<div class="region-pts">114</div>
+<div class="region-pts">140</div>
 <div class="region-pts-label">TOTAL POINTS</div>
 <div class="breakdown">
-<div class="breakdown-item"><div class="val">25</div><div class="lbl">Sign Pts (16)</div></div>
-<div class="breakdown-item"><div class="val">52</div><div class="lbl">Act Pts (16)</div></div>
-<div class="breakdown-item"><div class="val">15</div><div class="lbl">Loan Pts (16)</div></div>
-<div class="breakdown-item"><div class="val" style="color:#ffd700">22</div><div class="lbl">🔄 Double Bonus</div></div>
+<div class="breakdown-item"><div class="val">33</div><div class="lbl">Sign Pts (19)</div></div>
+<div class="breakdown-item"><div class="val">64</div><div class="lbl">Act Pts (40)</div></div>
+<div class="breakdown-item"><div class="val">21</div><div class="lbl">Loan Pts (7)</div></div>
+<div class="breakdown-item"><div class="val" style="color:#ffd700">22</div><div class="lbl">🔄 Double Bonus (5)</div></div>
 <div class="breakdown-item"><div class="val" style="color:#ffd700">0</div><div class="lbl">📸 Selfie Bonus</div></div>
 </div>
 </div>
@@ -128,7 +128,7 @@ tr:hover td{background:#111}
 <div class="filter-btn" onclick="filterRegion('Central')">Central</div>
 </div>
 <table>
-<thead><tr><th onclick="sortTable(0)">#</th><th onclick="sortTable(1)">Name</th><th onclick="sortTable(2)">Manager</th><th onclick="sortTable(3)">Region</th><th onclick="sortTable(4)">Signs</th><th onclick="sortTable(5)">Acts</th><th onclick="sortTable(6)">Loans</th><th onclick="sortTable(7)">Total</th></tr></thead>
+<thead><tr><th onclick="sortTable(0)">#</th><th onclick="sortTable(1)">Name</th><th onclick="sortTable(2)">Manager</th><th onclick="sortTable(3)">Region</th><th onclick="sortTable(4)">Signs</th><th onclick="sortTable(5)">Acts</th><th onclick="sortTable(6)">Loans</th><th onclick="sortTable(7)">2x Bonus</th><th onclick="sortTable(8)">Total</th></tr></thead>
 <tbody id="leaderboard"></tbody>
 </table>
 </div>
@@ -251,28 +251,33 @@ Aaron Davidson, Alyssa Singh, Bob Afable, Charles Kang, Colter Wilson, Felicia W
 </div>
 <script>
 const reps=[
-{name:"Diego Garcia",mgr:"Jonathan Sheridan",region:"West",signs:3,acts:5,loans:9,total:23},
-{name:"Hector Acedo",mgr:"Bryan Carter",region:"West",signs:1,acts:3,loans:18,total:22},
-{name:"Brady Katz",mgr:"Steve McMahon",region:"East",signs:4,acts:7,loans:3,total:20},
-{name:"Brian Johnson",mgr:"Scott Hockaday",region:"Central",signs:3,acts:8,loans:3,total:20},
-{name:"Dennis DeCicco",mgr:"Zachary Farley",region:"East",signs:4,acts:5,loans:0,total:17},
-{name:"Maggie Luo",mgr:"Scott Hockaday",region:"Central",signs:3,acts:5,loans:0,total:14},
-{name:"Merin Garcia",mgr:"Alison Rushworth",region:"West",signs:3,acts:2,loans:9,total:14},
-{name:"Taron Huckle",mgr:"Nate Obermark",region:"West",signs:3,acts:4,loans:0,total:13},
-{name:"Isaiah Hayes",mgr:"Nate Obermark",region:"West",signs:0,acts:0,loans:12,total:12},
-{name:"Ashley Kay",mgr:"Matthew Vitale",region:"Central",signs:3,acts:3,loans:0,total:12},
-{name:"Nik Rivera",mgr:"Bryan Carter",region:"West",signs:0,acts:7,loans:3,total:10},
-{name:"Jeffrey Huyen",mgr:"Jonathan DeJesus",region:"East",signs:0,acts:1,loans:9,total:10},
-{name:"Michael Okelley",mgr:"Matthew Vitale",region:"Central",signs:1,acts:5,loans:3,total:9},
-{name:"Daniel Faynerman",mgr:"Zachary Farley",region:"East",signs:0,acts:0,loans:9,total:9},
-{name:"Richard Chang",mgr:"Brett Rousse",region:"West",signs:6,acts:3,loans:0,total:9},
-{name:"Adam Kane",mgr:"Colter Wilson",region:"West",signs:1,acts:2,loans:3,total:8},
-{name:"Manuel Galindo Salazar",mgr:"Ramon Quevedo",region:"Central",signs:4,acts:1,loans:0,total:7},
-{name:"Alyssa Singh",mgr:"Nate Obermark",region:"West",signs:0,acts:1,loans:6,total:7},
-{name:"Leandro Rodrigues",mgr:"Meghan McFarlane",region:"East",signs:0,acts:1,loans:6,total:7},
-{name:"Matt Taki",mgr:"Steve McMahon",region:"East",signs:7,acts:0,loans:0,total:7}
+{name:"Diego Garcia",mgr:"Jonathan Sheridan",region:"West",signs:3,acts:5,loans:9,dbl:6,total:23},
+{name:"Hector Acedo",mgr:"Bryan Carter",region:"West",signs:1,acts:3,loans:18,dbl:0,total:22},
+{name:"Brian Johnson",mgr:"Scott Hockaday",region:"Central",signs:3,acts:8,loans:3,dbl:6,total:20},
+{name:"Brady Katz",mgr:"Steve McMahon",region:"East",signs:4,acts:7,loans:3,dbl:6,total:20},
+{name:"Dennis DeCicco",mgr:"Zachary Farley",region:"East",signs:4,acts:5,loans:0,dbl:8,total:17},
+{name:"Maggie Luo",mgr:"Scott Hockaday",region:"Central",signs:3,acts:5,loans:0,dbl:6,total:14},
+{name:"Merin Garcia",mgr:"Alison Rushworth",region:"West",signs:3,acts:2,loans:9,dbl:0,total:14},
+{name:"Taron Huckle",mgr:"Nate Obermark",region:"West",signs:3,acts:4,loans:0,dbl:6,total:13},
+{name:"Isaiah Hayes",mgr:"Nate Obermark",region:"West",signs:0,acts:0,loans:12,dbl:0,total:12},
+{name:"Ashley Kay",mgr:"Matthew Vitale",region:"Central",signs:3,acts:3,loans:0,dbl:6,total:12},
+{name:"Jeffrey Huyen",mgr:"Jonathan DeJesus",region:"East",signs:0,acts:1,loans:9,dbl:0,total:10},
+{name:"Nik Rivera",mgr:"Bryan Carter",region:"West",signs:0,acts:7,loans:3,dbl:0,total:10},
+{name:"Daniel Faynerman",mgr:"Zachary Farley",region:"East",signs:0,acts:0,loans:9,dbl:0,total:9},
+{name:"Michael Okelley",mgr:"Matthew Vitale",region:"Central",signs:1,acts:5,loans:3,dbl:0,total:9},
+{name:"Richard Chang",mgr:"Brett Rousse",region:"West",signs:6,acts:3,loans:0,dbl:0,total:9},
+{name:"Adam Kane",mgr:"Colter Wilson",region:"West",signs:1,acts:2,loans:3,dbl:2,total:8},
+{name:"Matt Taki",mgr:"Steve McMahon",region:"East",signs:7,acts:0,loans:0,dbl:0,total:7},
+{name:"Leandro Rodrigues",mgr:"Meghan McFarlane",region:"East",signs:0,acts:1,loans:6,dbl:0,total:7},
+{name:"Matt Milos",mgr:"Steve McMahon",region:"East",signs:0,acts:4,loans:3,dbl:0,total:7},
+{name:"Manuel Galindo Salazar",mgr:"Ramon Quevedo",region:"Central",signs:4,acts:1,loans:0,dbl:2,total:7},
+{name:"Felicia Wang",mgr:"Alison Rushworth",region:"West",signs:3,acts:4,loans:0,dbl:0,total:7},
+{name:"Alyssa Singh",mgr:"Nate Obermark",region:"West",signs:0,acts:1,loans:6,dbl:0,total:7},
+{name:"Ron Akins",mgr:"Phillip Skillern",region:"Central",signs:0,acts:1,loans:6,dbl:0,total:7},
+{name:"Rebecca Morgan",mgr:"Steve McMahon",region:"East",signs:0,acts:3,loans:3,dbl:0,total:6},
+{name:"Carl Carbo",mgr:"Dan Vazquez",region:"East",signs:3,acts:0,loans:3,dbl:0,total:6}
 ];
-let currentFilter='All',sortCol=7,sortAsc=false;
+let currentFilter='All',sortCol=8,sortAsc=false;
 function showTab(t){
 document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',['regional','individual','selfies','rules'][i]===t));
 ['regional','individual','selfies','rules'].forEach(id=>document.getElementById('tab-'+id).classList.toggle('hidden',id!==t));
@@ -288,7 +293,7 @@ renderTable();
 }
 function renderTable(){
 const filtered=currentFilter==='All'?reps:reps.filter(r=>r.region===currentFilter);
-const keys=['rank','name','mgr','region','signs','acts','loans','total'];
+const keys=['rank','name','mgr','region','signs','acts','loans','dbl','total'];
 filtered.sort((a,b)=>{
 const k=keys[sortCol];if(k==='rank')return 0;
 const va=a[k],vb=b[k];
@@ -299,7 +304,7 @@ const tbody=document.getElementById('leaderboard');
 tbody.innerHTML=filtered.map((r,i)=>`<tr>
 <td class="rank">${i+1}</td><td>${r.name}</td><td>${r.mgr}</td>
 <td><span class="region-tag ${r.region}">${r.region}</span></td>
-<td>${r.signs}</td><td>${r.acts}</td><td>${r.loans}</td>
+<td>${r.signs}</td><td>${r.acts}</td><td>${r.loans}</td><td>${r.dbl}</td>
 <td style="font-weight:700;color:#ffd700">${r.total}</td></tr>`).join('');
 }
 function updateCountdown(){
