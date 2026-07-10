@@ -186,8 +186,9 @@ def count_selfies(messages, target_date, region_map):
                 "posts": len(posts),
                 "images": total_images,
             })
-            region_tally[region]["total_posts"] += len(posts)
-            region_tally[region]["total_images"] += total_images
+            # Count only 1 selfie per rep, regardless of multiple posts
+            region_tally[region]["total_posts"] += 1
+            region_tally[region]["total_images"] += 1
         else:
             unmatched.append({
                 "username": username,
