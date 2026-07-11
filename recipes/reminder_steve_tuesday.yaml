@@ -1,0 +1,18 @@
+version: "1.0.0"
+title: "REV UP Tuesday Evening Reminder - Steve"
+description: |
+  Sends Steve a Tuesday 6pm ET Slack DM reminding him to post his Wednesday REV UP update.
+  Wednesdays are Selfie Day so extra emphasis on that.
+
+prompt: |
+  Send a Slack DM to Steve McMahon (user ID: U09494QBDUG) with a Tuesday evening
+  REV UP contest reminder for his Wednesday post.
+
+  Use this command:
+  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools slack post-message --channel "U09494QBDUG" --text "📸 *Hey Steve!* Quick heads up — tomorrow is Selfie Wednesday and your REV UP update day.\n\n📋 *Prep for tomorrow:*\n• Remind your reps to post selfies in #us-field-players-only\n• Check midweek signs & activations progress\n• Update any new loans that came through\n\n🤳 Make sure your region shows up strong for Selfie Day!"
+
+  That's it. Just send the message and confirm it was delivered.
+
+extensions:
+  - name: developer
+    type: builtin

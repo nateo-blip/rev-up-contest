@@ -1,0 +1,18 @@
+version: "1.0.0"
+title: "REV UP Thursday Evening Reminder - Phil"
+description: |
+  Sends Phil a Thursday 6pm ET Slack DM reminding him to post his Friday REV UP update.
+  Fridays are when the weekly selfie tally goes out.
+
+prompt: |
+  Send a Slack DM to Phillip Skillern (user ID: U08QU3XLL2Z) with a Thursday evening
+  REV UP contest reminder for his Friday post.
+
+  Use this command:
+  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools slack post-message --channel "U08QU3XLL2Z" --text "🏆 *Hey Phil!* Quick heads up — tomorrow is your Friday REV UP update day.\n\n📋 *Prep for tomorrow:*\n• Review the weekly selfie tally (auto-generated in the Google Doc)\n• Confirm Ali's Selfie Day winner pick\n• Check end-of-week regional standings\n• Celebrate wins with your team!\n\n📊 The weekly report drops tomorrow — get ready to share the results!"
+
+  That's it. Just send the message and confirm it was delivered.
+
+extensions:
+  - name: developer
+    type: builtin

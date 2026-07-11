@@ -1,0 +1,17 @@
+version: "1.0.0"
+title: "REV UP Sunday Evening Reminder - Nate"
+description: |
+  Sends Nate a Sunday 6pm ET Slack DM reminding him to post his Monday REV UP update.
+
+prompt: |
+  Send a Slack DM to Nate Obermark (user ID: U07TL521MB4) with a Sunday evening
+  REV UP contest reminder for his Monday post.
+
+  Use this command:
+  eval "$(/opt/homebrew/bin/brew shellenv)" && sq agent-tools slack post-message --channel "U07TL521MB4" --text "🏁 *Hey Nate!* Quick heads up — tomorrow is your Monday REV UP update day.\n\n📋 *Prep for tomorrow:*\n• Review weekend selfie submissions in #us-field-players-only\n• Check regional standings at https://nateo-blip.github.io/rev-up-contest/app/\n• Flag any scoring disputes or questions\n\n🔥 Let's kick off the week strong!"
+
+  That's it. Just send the message and confirm it was delivered.
+
+extensions:
+  - name: developer
+    type: builtin

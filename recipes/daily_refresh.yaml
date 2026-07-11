@@ -1,7 +1,7 @@
 version: "1.0.0"
 title: "REV UP Daily Data Refresh"
 description: |
-  Runs daily at 7am ET to refresh contest leaderboard data from Snowflake
+  Runs daily at 5am Pacific to refresh contest leaderboard data from Snowflake
   and update the app with current standings.
 
 prompt: |
