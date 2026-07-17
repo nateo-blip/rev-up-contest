@@ -111,6 +111,7 @@ tr:hover td{background:#111}
 <div class="region-name">CENTRAL</div>
 <div class="region-pts" style="color:#5be65b">17</div>
 <div class="region-pts-label">TOTAL SELFIES (Wk 1: 11 · Wk 2: 6)</div>
+<div style="color:#ffd700;font-size:0.9rem;margin-top:10px">⭐ Ali's Pick Wk2: Lenaye Doussan (+10 pts)</div>
 </div>
 <div class="region-card">
 <div class="region-name">WEST</div>
@@ -124,7 +125,7 @@ tr:hover td{background:#111}
 <thead><tr><th>Week</th><th>Date</th><th>East</th><th>Central</th><th>West</th><th>Total</th><th>Region Winner</th><th>⭐ Ali's Pick</th></tr></thead>
 <tbody>
 <tr><td style="font-weight:700">1</td><td>July 8</td><td>33</td><td>11</td><td>14</td><td>58</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">Brady Katz (East)</td></tr>
-<tr><td style="font-weight:700">2</td><td>July 15</td><td>32</td><td>6</td><td>14</td><td>52</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">TBD</td></tr>
+<tr><td style="font-weight:700">2</td><td>July 15</td><td>32</td><td>6</td><td>14</td><td>52</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">Lenaye Doussan (Central)</td></tr>
 <tr style="color:#555"><td>3</td><td>July 22</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 <tr style="color:#555"><td>4</td><td>July 29</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 </tbody>
@@ -181,7 +182,7 @@ Aaron Davidson, Alyssa Singh, Bob Afable, Charles Kang, Colter Wilson, Felicia W
 <p style="color:#888;margin-top:10px;font-size:0.9rem">Ali announces her winner every Thursday. Each pick earns +10 pts for that rep's region.</p>
 <div style="margin-top:15px">
 <div class="rule-row"><span>Week 1 (July 8)</span><span style="color:#ffd700">🏆 Brady Katz (East) +10 pts</span></div>
-<div class="rule-row"><span>Week 2 (July 15)</span><span style="color:#ffd700">🏆 TBD — Ali's Pick Pending</span></div>
+<div class="rule-row"><span>Week 2 (July 15)</span><span style="color:#ffd700">🏆 Lenaye Doussan (Central)</span></div>
 <div class="rule-row" style="color:#555"><span>Week 3 (July 22)</span><span>—</span></div>
 <div class="rule-row" style="color:#555"><span>Week 4 (July 29)</span><span>—</span></div>
 </div>
@@ -402,7 +403,7 @@ document.getElementById('mins').textContent=Math.floor((diff%3600000)/60000);
 document.getElementById('secs').textContent=Math.floor((diff%60000)/1000);
 }
 // Selfie bonuses (manually tracked per week)
-const selfieBonuses={East:30,Central:0,West:0}; // Week 1: East won (+10) + Ali's Pick (+10) | Week 2: East won (+10)
+const selfieBonuses={East:30,Central:10,West:0}; // Week 1: East won (+10) + Ali's Pick (+10) | Week 2: East won (+10) + Ali's Pick Central (+10)
 
 function renderRegional(){
 const totals={};
