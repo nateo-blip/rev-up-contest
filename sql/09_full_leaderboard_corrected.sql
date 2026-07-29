@@ -121,7 +121,7 @@ SELECT
   c.REP_NAME,
   e.DIRECT_LEAD AS MANAGER,
   CASE 
-    WHEN e.DIRECT_LEAD IN ('Steve McMahon','Jonathan DeJesus','Zachary Farley','Dan Cook','Kristin Moore','Meghan McFarlane','Chris Moran','Sean Avery') THEN 'East'
+    WHEN e.DIRECT_LEAD IN ('Steve McMahon','Jonathan DeJesus','Zachary Farley','Dan Cook','Kristin Moore','Meghan McFarlane','Chris Moran','Sean Avery','Gerry Williamson') THEN 'East'
     WHEN e.DIRECT_LEAD IN ('Phillip Skillern','Ramon Quevedo','Alessandra Verne','Scott Hockaday','Matthew Vitale','Stephen Stinchcomb') THEN 'Central'
     WHEN e.DIRECT_LEAD IN ('Nate Obermark','Colter Wilson','Bryan Carter','Brett Rousse','Jonathan Sheridan','Alison Rushworth','Gareth James') THEN 'West'
     ELSE e.REGION
