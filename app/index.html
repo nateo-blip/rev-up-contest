@@ -128,7 +128,7 @@ tr:hover td{background:#111}
 <tr><td style="font-weight:700">1</td><td>July 8</td><td>33</td><td>11</td><td>14</td><td>58</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">Brady Katz (East)</td></tr>
 <tr><td style="font-weight:700">2</td><td>July 15</td><td>32</td><td>6</td><td>14</td><td>52</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">Lenaye Doussan (Central)</td></tr>
 <tr><td style="font-weight:700">3</td><td>July 23</td><td>26</td><td>10</td><td>8</td><td>44</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">All Teams (+10 each)</td></tr>
-<tr><td style="font-weight:700">4</td><td>July 30</td><td>18</td><td>2</td><td>9</td><td>29</td><td><span class="region-tag East">East</span></td><td style="color:#888">TBD</td></tr>
+<tr><td style="font-weight:700">4</td><td>July 30</td><td>18</td><td>2</td><td>9</td><td>29</td><td><span class="region-tag East">East</span></td><td style="color:#ffd700">Daniel Cardenas (West +10)</td></tr>
 </tbody>
 </table>
 </div>
@@ -281,7 +281,7 @@ Aaron Davidson, Alyssa Singh, Bob Afable, Charles Kang, Colter Wilson, Felicia W
 </div>
 <div class="footer">
 <p>Created by Nate Obermark, Phillip Skillern & Steve McMahon</p>
-<p style="margin-top:5px">Data refreshed from Snowflake · Last updated: July 31, 2026 7:20am PT</p>
+<p style="margin-top:5px">Data refreshed from Snowflake · Last updated: July 31, 2026 2:37pm PT</p>
 </div>
 <script>
 const reps=[
@@ -468,7 +468,7 @@ document.getElementById('mins').textContent=Math.floor((diff%3600000)/60000);
 document.getElementById('secs').textContent=Math.floor((diff%60000)/1000);
 }
 // Selfie bonuses (manually tracked per week)
-const selfieBonuses={East:60,Central:20,West:10}; // Week 1: East won (+10) + Ali's Pick (+10) | Week 2: East won (+10) + Ali's Pick Central (+10) | Week 3: East won (+10) + Ali's Pick All Teams (+10 each) | Week 4: East won (+10)
+const selfieBonuses={East:60,Central:20,West:20}; // Week 1: East won (+10) + Ali's Pick (+10) | Week 2: East won (+10) + Ali's Pick Central (+10) | Week 3: East won (+10) + Ali's Pick All Teams (+10 each) | Week 4: East won (+10) + Ali's Pick West/Daniel Cardenas (+10)
 
 function renderRegional(){
 const totals={};
